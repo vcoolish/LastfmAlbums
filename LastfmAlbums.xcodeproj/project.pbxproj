@@ -18,7 +18,6 @@
 		76B1DE4322F8838B0026DA40 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B1DE0022F8838A0026DA40 /* StoryboardInitializable.swift */; };
 		76B1DE4522F8838B0026DA40 /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B1DE0222F8838A0026DA40 /* LoadingAnimation.swift */; };
 		76B1DE4622F8838B0026DA40 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B1DE0422F8838A0026DA40 /* TrackCell.swift */; };
-		76B1DE4722F8838B0026DA40 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B1DE0522F8838A0026DA40 /* SelectButton.swift */; };
 		76B1DE4822F8838B0026DA40 /* ArtistInfoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B1DE0622F8838A0026DA40 /* ArtistInfoHeaderCell.swift */; };
 		76B1DE4922F8838B0026DA40 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B1DE0722F8838A0026DA40 /* AlbumCell.swift */; };
 		76B1DE4A22F8838B0026DA40 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76B1DE0822F8838A0026DA40 /* AlbumCell.xib */; };
@@ -74,7 +73,6 @@
 		76B1DE0022F8838A0026DA40 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		76B1DE0222F8838A0026DA40 /* LoadingAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
 		76B1DE0422F8838A0026DA40 /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
-		76B1DE0522F8838A0026DA40 /* SelectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		76B1DE0622F8838A0026DA40 /* ArtistInfoHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistInfoHeaderCell.swift; sourceTree = "<group>"; };
 		76B1DE0722F8838A0026DA40 /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		76B1DE0822F8838A0026DA40 /* AlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				76B1DE0422F8838A0026DA40 /* TrackCell.swift */,
-				76B1DE0522F8838A0026DA40 /* SelectButton.swift */,
 				76B1DE0622F8838A0026DA40 /* ArtistInfoHeaderCell.swift */,
 				76B1DE0722F8838A0026DA40 /* AlbumCell.swift */,
 				76B1DE0822F8838A0026DA40 /* AlbumCell.xib */,
@@ -469,7 +466,6 @@
 				76B1DE3F22F8838B0026DA40 /* AppDelegate.swift in Sources */,
 				76B1DE5222F8838B0026DA40 /* ArtistDTO.swift in Sources */,
 				76B1DE5822F8838B0026DA40 /* ApiInteractor.swift in Sources */,
-				76B1DE4722F8838B0026DA40 /* SelectButton.swift in Sources */,
 				76B1DE6E22F8838B0026DA40 /* ArtistAlbumsVC.swift in Sources */,
 				76B1DE7022F8838B0026DA40 /* ArtistAlbumsPresenter.swift in Sources */,
 				76B1DE4522F8838B0026DA40 /* LoadingAnimation.swift in Sources */,

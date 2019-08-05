@@ -71,8 +71,6 @@ extension AlbumMO {
     static func create(from album: AlbumDTO, context: NSManagedObjectContext? = nil, withImage: UIImage? = nil) -> AlbumMO? {
         var albumToReturn : AlbumMO?
         
-       
-        
         var _context : NSManagedObjectContext!
         if let context = context {
             _context = context
@@ -83,13 +81,10 @@ extension AlbumMO {
             
             _context = privateContext
         }
-        
         guard let albumArtist = album.artist, let artist = ArtistMO.get(from: albumArtist, context: _context) else {
             return nil
         }
-        
-        
-            
+        print(2)
         var imageURL : URL?
 
         if let image = withImage, let url = saveAlbumImage(image, identifier: album.hashString) {
@@ -122,9 +117,7 @@ extension AlbumMO {
                 let _ = deleteFile(file: url)
             }
         }
-        
-        
+        print(3)
         return albumToReturn
-
     }
 }

@@ -1,22 +1,24 @@
 import UIKit
 
-class SelectAlbumButton : UIBarButtonItem {
+class SelectAlbumButton : UIButton {
     
-    var isSelected = false
+    var selection = false
     var onSave : (() -> ())!
     var onDelete: (() -> ())!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.action = #selector(buttonClicked)
+        addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
     }
     
-    @objc func buttonClicked(button: UIBarButtonItem) {
-        isSelected = !isSelected
-        if isSelected {
-            onDelete()
-        } else {
+    @objc func buttonClicked(_ sender: Any?) {
+        selection = !selection
+        if selection {
             onSave()
+            setImage(UIImage(named: "Selected")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        } else {
+            onDelete()
+            setImage(UIImage(named: "Unselected")?.withRenderingMode(.alwaysOriginal), for: .normal)
         }
     }
 }

@@ -16,19 +16,6 @@ class ArtistAlbumsVC : UIViewController {
         }
     }
     
-//    lazy var loadingView : UIView = {
-//        let loadingView = showLoadingView(centerX: view.center.x, originY: view.center.y)
-//        loadingView.center = self.view.center
-//        loadingView.isHidden = true
-//        return loadingView
-//    }()
-    
-    var dismissToAlbumCallback : (() -> ())? {
-        didSet {
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(dismissToAlbum))
-        }
-    }
-    
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.register(UINib(nibName: "AlbumCell", bundle: Bundle.main), forCellWithReuseIdentifier: "AlbumCell")
@@ -53,10 +40,6 @@ class ArtistAlbumsVC : UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier ?? "" {
         case "presentAlbumFromArtist":
-            let backItem = UIBarButtonItem()
-            backItem.title = "Artist"
-            navigationItem.backBarButtonItem = backItem
-            
             let destination = segue.destination as! AlbumVC
             let indexPath = collectionView.indexPathsForSelectedItems![0]
            
@@ -72,17 +55,8 @@ class ArtistAlbumsVC : UIViewController {
             presenter.selectedAlbumIndexPath = collectionView.indexPathsForSelectedItems![0]
             
         default:
-            if let id = segue.identifier {
-                print("Unknown segue: \(id)")
-            }
+            print(segue.identifier ?? "unknown segue")
         }
-    }
-    
-    @objc func dismissToAlbum(sender : UIBarButtonItem) {
-        if let callback = dismissToAlbumCallback {
-            callback()
-        }
-        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -184,11 +158,7 @@ extension ArtistAlbumsVC: ArtistAlbumsView {
             message: Constants.Error.connectionError,
             preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            if self.dismissToAlbumCallback != nil {
-                self.dismissToAlbum(sender: self.navigationItem.leftBarButtonItem!)
-            } else {
-                self.navigationController?.popViewController(animated: true)
-            }
+            self.navigationController?.popViewController(animated: true)
         }))
         present(ac, animated: true, completion: nil)
     }

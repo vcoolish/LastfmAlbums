@@ -7,7 +7,7 @@ class Album : Decodable, Hashable, Equatable {
     var name : String?
     var mbid : String?
     var albumDetail : AlbumInfo?
-    var artist : Artist?
+    var artist : Artist!
 
     var hadDetail : Bool = false
 

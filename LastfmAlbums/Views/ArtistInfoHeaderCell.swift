@@ -44,7 +44,6 @@ class ArtistInfoHeaderCell : UICollectionReusableView {
         if let view = loadingView {
             view.removeFromSuperview()
         }
-        
         tags.isHidden = false
         infoLabel.isHidden = false
         artistInfoStatic.isHidden = false

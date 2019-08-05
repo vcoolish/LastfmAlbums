@@ -53,6 +53,9 @@ func getTopAlbums(
                 onError(error)
             } else {
                 if let data = success {
+                    for album in data {
+                        album.artist = artist
+                    }
                     onSuccess(data)
                 }
             }

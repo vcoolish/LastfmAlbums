@@ -8,7 +8,9 @@ class StoredAlbumsVC: UIViewController, StoredAlbumsView {
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
-            collectionView.register(UINib(nibName: "AlbumCell", bundle: Bundle.main), forCellWithReuseIdentifier: "AlbumCell")
+            collectionView.register(
+                UINib(nibName: "AlbumCell", bundle: Bundle.main),
+                forCellWithReuseIdentifier: "AlbumCell")
         }
     }
     
@@ -41,22 +43,17 @@ class StoredAlbumsVC: UIViewController, StoredAlbumsView {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier ?? "" {
         case "presentAlbumFromHome":
-            let backItem = UIBarButtonItem()
-            backItem.title = self.navigationItem.title
-            navigationItem.backBarButtonItem = backItem
-            
-            let destination = segue.destination as! AlbumVC
+            let destination = segue.destination as? AlbumVC
             let indexPath = collectionView.indexPathsForSelectedItems![0]
-            
-            let albumMO = presenter.fetchedResultsController.object(at: IndexPath(row: indexPath.row - 1, section: 0)) as? AlbumMO
+            let albumMO = presenter.fetchedResultsController
+                .object(at: IndexPath(row: indexPath.row - 1, section: 0)) as? AlbumMO
             if let album = albumMO {
                 var image: UIImage?
                 if let imagePath = album.getLocalImagePathString() {
                     image = UIImage(contentsOfFile: imagePath)
                 }
-                destination.albumDTO = AlbumDTO(albumMO: album, image: image)
+                destination?.albumDTO = AlbumDTO(albumMO: album, image: image)
             }
-            
         default:
             if let id = segue.identifier {
                 print("Unknown segue: \(id)")

@@ -21,7 +21,6 @@ class AlbumPresenter {
                 albumInfoHeader.imageView.image = albumImage
                 storedImage = albumImage
             } else if let photoUrl = dto.photoUrl {
-                
                 albumInfoHeader
                     .imageView
                     .af_setImage(
