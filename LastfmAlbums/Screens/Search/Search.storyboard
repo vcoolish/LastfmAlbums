@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ow0-6N-5vV">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Artists-->
+        <scene sceneID="1lR-YR-p9o">
+            <objects>
+                <viewController id="WMH-we-PLs" customClass="SearchVC" customModule="AlbumFolks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZhG-iG-Phd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="XCe-0A-zlJ">
+                                <rect key="frame" x="0.0" y="56" width="414" height="841"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-qZ-mbo">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WMH-we-PLs" id="CQz-FS-ajz"/>
+                                    <outlet property="delegate" destination="WMH-we-PLs" id="vmN-6e-BaN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="swV-1k-RrP" firstAttribute="bottom" secondItem="XCe-0A-zlJ" secondAttribute="bottom" constant="-35" id="DVu-vG-3Kw"/>
+                            <constraint firstItem="swV-1k-RrP" firstAttribute="bottom" secondItem="gRt-qZ-mbo" secondAttribute="bottom" id="Fq3-ls-2BO"/>
+                            <constraint firstItem="gRt-qZ-mbo" firstAttribute="top" secondItem="swV-1k-RrP" secondAttribute="top" id="HDL-7J-ZD5"/>
+                            <constraint firstItem="XCe-0A-zlJ" firstAttribute="leading" secondItem="swV-1k-RrP" secondAttribute="leading" id="Pke-tr-k4G"/>
+                            <constraint firstItem="swV-1k-RrP" firstAttribute="trailing" secondItem="gRt-qZ-mbo" secondAttribute="trailing" id="Sfo-MZ-Ud7"/>
+                            <constraint firstItem="gRt-qZ-mbo" firstAttribute="leading" secondItem="swV-1k-RrP" secondAttribute="leading" id="a9r-NX-5fd"/>
+                            <constraint firstItem="swV-1k-RrP" firstAttribute="top" secondItem="XCe-0A-zlJ" secondAttribute="top" constant="32" id="ck6-ua-adJ"/>
+                            <constraint firstItem="swV-1k-RrP" firstAttribute="trailing" secondItem="XCe-0A-zlJ" secondAttribute="trailing" id="uuB-Ib-Xh0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="swV-1k-RrP"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search Artists" id="J1I-PX-3KZ"/>
+                    <connections>
+                        <outlet property="tableView" destination="gRt-qZ-mbo" id="JJo-Zk-REa"/>
+                        <segue destination="jHL-Vp-IOR" kind="show" identifier="searchToArtistAlbums" id="p5v-9m-rd9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0X1-R4-ZY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="581" y="422"/>
+        </scene>
+        <!--ArtistAlbums-->
+        <scene sceneID="lmL-0S-BoZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ArtistAlbums" id="jHL-Vp-IOR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHc-XP-LR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108" y="421"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cYy-r0-VQk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ow0-6N-5vV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rmk-L4-KZp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WMH-we-PLs" kind="relationship" relationship="rootViewController" id="17E-pP-53J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0XB-KE-iYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222" y="423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="320" height="568"/>
+    </resources>
+</document>
